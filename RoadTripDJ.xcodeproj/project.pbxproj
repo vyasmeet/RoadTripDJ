@@ -7,15 +7,34 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D108A6DE1CDB478C00B6B698 /* PlaylistDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = D108A6DD1CDB478C00B6B698 /* PlaylistDataSource.m */; };
+		D108A6E31CDB563100B6B698 /* SamplePlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = D108A6E21CDB563100B6B698 /* SamplePlaylistItem.m */; };
+		D108A6E51CDB571900B6B698 /* SampleImages.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D108A6E41CDB571900B6B698 /* SampleImages.xcassets */; };
+		D108A6E91CDB620900B6B698 /* PlaylistItemCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D108A6E81CDB620900B6B698 /* PlaylistItemCollectionViewCell.m */; };
+		D1E70AF31CDC5B5D00CCFD41 /* PlaylistHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = D1E70AF21CDC5B5D00CCFD41 /* PlaylistHeaderView.m */; };
+		D1E70AF51CDC5B9800CCFD41 /* PlaylistHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D1E70AF41CDC5B9800CCFD41 /* PlaylistHeaderView.xib */; };
 		E42F09051CC54EFB009AED4A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F09041CC54EFB009AED4A /* main.m */; };
 		E42F09081CC54EFB009AED4A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F09071CC54EFB009AED4A /* AppDelegate.m */; };
 		E42F090B1CC54EFB009AED4A /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E42F090A1CC54EFB009AED4A /* ViewController.m */; };
 		E42F090E1CC54EFB009AED4A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42F090C1CC54EFB009AED4A /* Main.storyboard */; };
 		E42F09101CC54EFB009AED4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42F090F1CC54EFB009AED4A /* Assets.xcassets */; };
 		E42F09131CC54EFB009AED4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42F09111CC54EFB009AED4A /* LaunchScreen.storyboard */; };
+		E461015F1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E461015E1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m */; };
+		E4A025641CD25E30002D95CA /* PlayerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A025631CD25E30002D95CA /* PlayerBar.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D108A6DC1CDB478C00B6B698 /* PlaylistDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistDataSource.h; sourceTree = "<group>"; };
+		D108A6DD1CDB478C00B6B698 /* PlaylistDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistDataSource.m; sourceTree = "<group>"; };
+		D108A6E01CDB557800B6B698 /* PlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistItem.h; sourceTree = "<group>"; };
+		D108A6E11CDB563100B6B698 /* SamplePlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SamplePlaylistItem.h; sourceTree = "<group>"; };
+		D108A6E21CDB563100B6B698 /* SamplePlaylistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SamplePlaylistItem.m; sourceTree = "<group>"; };
+		D108A6E41CDB571900B6B698 /* SampleImages.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = SampleImages.xcassets; sourceTree = "<group>"; };
+		D108A6E71CDB620900B6B698 /* PlaylistItemCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistItemCollectionViewCell.h; sourceTree = "<group>"; };
+		D108A6E81CDB620900B6B698 /* PlaylistItemCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistItemCollectionViewCell.m; sourceTree = "<group>"; };
+		D1E70AF11CDC5B5D00CCFD41 /* PlaylistHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlaylistHeaderView.h; sourceTree = "<group>"; };
+		D1E70AF21CDC5B5D00CCFD41 /* PlaylistHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlaylistHeaderView.m; sourceTree = "<group>"; };
+		D1E70AF41CDC5B9800CCFD41 /* PlaylistHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = PlaylistHeaderView.xib; sourceTree = "<group>"; };
 		E42F09001CC54EFB009AED4A /* RoadTripDJ.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RoadTripDJ.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E42F09041CC54EFB009AED4A /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		E42F09061CC54EFB009AED4A /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -26,6 +45,10 @@
 		E42F090F1CC54EFB009AED4A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		E42F09121CC54EFB009AED4A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		E42F09141CC54EFB009AED4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E461015D1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMediaItem+PlaylistItem.h"; sourceTree = "<group>"; };
+		E461015E1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMediaItem+PlaylistItem.m"; sourceTree = "<group>"; };
+		E4A025621CD25E30002D95CA /* PlayerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBar.h; sourceTree = "<group>"; };
+		E4A025631CD25E30002D95CA /* PlayerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -39,6 +62,30 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D108A6DF1CDB553000B6B698 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D108A6E01CDB557800B6B698 /* PlaylistItem.h */,
+				D108A6E11CDB563100B6B698 /* SamplePlaylistItem.h */,
+				D108A6E21CDB563100B6B698 /* SamplePlaylistItem.m */,
+				E461015D1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.h */,
+				E461015E1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D108A6E61CDB61D500B6B698 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D108A6E71CDB620900B6B698 /* PlaylistItemCollectionViewCell.h */,
+				D108A6E81CDB620900B6B698 /* PlaylistItemCollectionViewCell.m */,
+				D1E70AF11CDC5B5D00CCFD41 /* PlaylistHeaderView.h */,
+				D1E70AF21CDC5B5D00CCFD41 /* PlaylistHeaderView.m */,
+				D1E70AF41CDC5B9800CCFD41 /* PlaylistHeaderView.xib */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		E42F08F71CC54EFB009AED4A = {
 			isa = PBXGroup;
 			children = (
@@ -58,12 +105,19 @@
 		E42F09021CC54EFB009AED4A /* RoadTripDJ */ = {
 			isa = PBXGroup;
 			children = (
+				D108A6E61CDB61D500B6B698 /* Views */,
+				D108A6DF1CDB553000B6B698 /* Models */,
 				E42F09061CC54EFB009AED4A /* AppDelegate.h */,
 				E42F09071CC54EFB009AED4A /* AppDelegate.m */,
+				D108A6DC1CDB478C00B6B698 /* PlaylistDataSource.h */,
+				D108A6DD1CDB478C00B6B698 /* PlaylistDataSource.m */,
+				E4A025621CD25E30002D95CA /* PlayerBar.h */,
+				E4A025631CD25E30002D95CA /* PlayerBar.m */,
 				E42F09091CC54EFB009AED4A /* ViewController.h */,
 				E42F090A1CC54EFB009AED4A /* ViewController.m */,
 				E42F090C1CC54EFB009AED4A /* Main.storyboard */,
 				E42F090F1CC54EFB009AED4A /* Assets.xcassets */,
+				D108A6E41CDB571900B6B698 /* SampleImages.xcassets */,
 				E42F09111CC54EFB009AED4A /* LaunchScreen.storyboard */,
 				E42F09141CC54EFB009AED4A /* Info.plist */,
 				E42F09031CC54EFB009AED4A /* Supporting Files */,
@@ -138,6 +192,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				E42F09131CC54EFB009AED4A /* LaunchScreen.storyboard in Resources */,
+				D108A6E51CDB571900B6B698 /* SampleImages.xcassets in Resources */,
+				D1E70AF51CDC5B9800CCFD41 /* PlaylistHeaderView.xib in Resources */,
 				E42F09101CC54EFB009AED4A /* Assets.xcassets in Resources */,
 				E42F090E1CC54EFB009AED4A /* Main.storyboard in Resources */,
 			);
@@ -150,7 +206,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E4A025641CD25E30002D95CA /* PlayerBar.m in Sources */,
+				D108A6DE1CDB478C00B6B698 /* PlaylistDataSource.m in Sources */,
+				D108A6E31CDB563100B6B698 /* SamplePlaylistItem.m in Sources */,
 				E42F090B1CC54EFB009AED4A /* ViewController.m in Sources */,
+				E461015F1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m in Sources */,
+				D108A6E91CDB620900B6B698 /* PlaylistItemCollectionViewCell.m in Sources */,
+				D1E70AF31CDC5B5D00CCFD41 /* PlaylistHeaderView.m in Sources */,
 				E42F09081CC54EFB009AED4A /* AppDelegate.m in Sources */,
 				E42F09051CC54EFB009AED4A /* main.m in Sources */,
 			);
@@ -266,10 +328,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RoadTripDJ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetvyas.RoadTripDJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -277,10 +342,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				INFOPLIST_FILE = RoadTripDJ/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.meetvyas.RoadTripDJ;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
@@ -303,6 +371,7 @@
 				E42F09191CC54EFB009AED4A /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

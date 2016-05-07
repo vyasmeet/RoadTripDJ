@@ -3,9 +3,10 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Road Trip DJ-->
+        <!--Player Bar Delegate-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -17,36 +18,136 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Lpo-T6-4yv">
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-Dw-gMH">
+                                <rect key="frame" x="0.0" y="503" width="375" height="164"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="7lZ-cy-ZpS">
+                                    <size key="itemSize" width="360" height="61"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="tL0-aF-m8q" customClass="PlaylistItemCollectionViewCell">
+                                        <rect key="frame" x="7.5" y="64" width="360" height="61"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="360" height="61"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="32e-x3-aEF">
+                                                    <rect key="frame" x="8" y="0.0" width="90" height="60"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="IMz-DZ-64H"/>
+                                                        <constraint firstAttribute="width" constant="90" id="b59-1t-tMO"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Song Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1et-KJ-F8P">
+                                                    <rect key="frame" x="108" y="8" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="27a-SN-Wwt">
+                                                    <rect key="frame" x="108" y="32" width="37" height="16"/>
+                                                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
+                                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <color key="backgroundColor" red="0.10408653846153848" green="0.10408653846153848" blue="0.10408653846153848" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="32e-x3-aEF" firstAttribute="leading" secondItem="tL0-aF-m8q" secondAttribute="leadingMargin" id="2oV-oo-yV0"/>
+                                            <constraint firstAttribute="topMargin" secondItem="1et-KJ-F8P" secondAttribute="top" id="BQP-lU-ss0"/>
+                                            <constraint firstItem="1et-KJ-F8P" firstAttribute="leading" secondItem="32e-x3-aEF" secondAttribute="trailing" constant="10" id="PCV-aN-VDO"/>
+                                            <constraint firstItem="27a-SN-Wwt" firstAttribute="leading" secondItem="1et-KJ-F8P" secondAttribute="leading" id="Zvm-uy-fme"/>
+                                            <constraint firstItem="27a-SN-Wwt" firstAttribute="top" secondItem="1et-KJ-F8P" secondAttribute="bottom" constant="3" id="an2-fv-I8e"/>
+                                            <constraint firstItem="32e-x3-aEF" firstAttribute="leading" secondItem="tL0-aF-m8q" secondAttribute="leading" id="dwI-Y8-1Ab"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="27a-SN-Wwt" secondAttribute="trailing" constant="4" id="fjE-SX-NIY"/>
+                                            <constraint firstItem="32e-x3-aEF" firstAttribute="top" secondItem="tL0-aF-m8q" secondAttribute="top" id="jkN-8W-Z16"/>
+                                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="1et-KJ-F8P" secondAttribute="trailing" constant="4" id="m0r-rV-npH"/>
+                                            <constraint firstItem="32e-x3-aEF" firstAttribute="top" secondItem="tL0-aF-m8q" secondAttribute="top" id="uii-Ms-DZl"/>
+                                        </constraints>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="dwI-Y8-1Ab"/>
+                                            </mask>
+                                        </variation>
+                                        <connections>
+                                            <outlet property="artistLabel" destination="27a-SN-Wwt" id="gjG-qn-7TK"/>
+                                            <outlet property="imageView" destination="32e-x3-aEF" id="cos-ox-lGh"/>
+                                            <outlet property="songLabel" destination="1et-KJ-F8P" id="thO-cP-JEE"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="OSr-qz-8RD" id="gMW-6z-ptJ"/>
+                                </connections>
+                            </collectionView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Lpo-T6-4yv" customClass="PlayerBar">
                                 <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="cAP-x2-QFU"/>
                                 </constraints>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="0ya-1R-V6A"/>
-                                    <barButtonItem systemItem="rewind" id="e6Y-wB-m5I"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="r8a-vq-cfJ"/>
-                                    <barButtonItem systemItem="play" id="oDz-4k-Xr0"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="c8o-gJ-M3M"/>
-                                    <barButtonItem systemItem="fastForward" id="txz-PE-GId"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="Xv0-xU-JvN"/>
-                                </items>
+                                <items/>
                                 <color key="tintColor" red="0.5" green="0.0" blue="0.5" alpha="1" colorSpace="calibratedRGB"/>
+                                <connections>
+                                    <outlet property="playerBarDelegate" destination="BYZ-38-t0r" id="chG-TJ-cq3"/>
+                                </connections>
                             </toolbar>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcp-y2-OnP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="439"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="439" id="8QU-bc-4tx"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Kcp-y2-OnP" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="4mQ-ZK-FkK"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lpo-T6-4yv" secondAttribute="bottom" id="5Rj-ob-7RL"/>
+                            <constraint firstAttribute="trailing" secondItem="9r5-Dw-gMH" secondAttribute="trailing" id="6tC-PL-BsN"/>
+                            <constraint firstItem="9r5-Dw-gMH" firstAttribute="top" secondItem="Kcp-y2-OnP" secondAttribute="bottom" id="HSl-LV-WCu"/>
+                            <constraint firstItem="Kcp-y2-OnP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jez-tL-Vnp"/>
+                            <constraint firstItem="9r5-Dw-gMH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="439" id="MRy-7u-fXi"/>
                             <constraint firstItem="Lpo-T6-4yv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N9b-wf-tBD"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9r5-Dw-gMH" secondAttribute="bottom" id="T5J-o2-kOH"/>
+                            <constraint firstItem="9r5-Dw-gMH" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="aOE-HP-Iki"/>
+                            <constraint firstItem="9r5-Dw-gMH" firstAttribute="top" secondItem="Kcp-y2-OnP" secondAttribute="bottom" constant="-64" id="gWn-aw-mLc"/>
+                            <constraint firstAttribute="trailing" secondItem="Kcp-y2-OnP" secondAttribute="trailing" id="jGe-4S-9of"/>
                             <constraint firstAttribute="trailing" secondItem="Lpo-T6-4yv" secondAttribute="trailing" id="urg-WY-5E5"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="MRy-7u-fXi"/>
+                                <exclude reference="gWn-aw-mLc"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Road Trip DJ" id="SWy-0k-ddf">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sC2-BO-L34"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="sC2-BO-L34">
+                            <connections>
+                                <action selector="addMusic:" destination="BYZ-38-t0r" id="HFY-e4-6Eb"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="9r5-Dw-gMH" id="4Be-7h-Vmn"/>
+                        <outlet property="headerContainerView" destination="Kcp-y2-OnP" id="AhR-K8-LYd"/>
+                        <outlet property="playerBar" destination="Lpo-T6-4yv" id="1Gn-pM-utk"/>
+                        <outlet property="playlistDataSource" destination="OSr-qz-8RD" id="jnO-DM-NTw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <customObject id="OSr-qz-8RD" customClass="PlaylistDataSource">
+                    <connections>
+                        <outlet property="collectionView" destination="9r5-Dw-gMH" id="EbE-bq-8X1"/>
+                    </connections>
+                </customObject>
             </objects>
             <point key="canvasLocation" x="1303.5" y="-412.5"/>
         </scene>

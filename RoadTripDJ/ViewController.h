@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "PlayerBar.h"
 
 @interface ViewController : UIViewController
 
