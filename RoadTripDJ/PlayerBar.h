@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "UIButton+BackgroundColorForState.h"
 
 @protocol PlayerBarDelegate;
 
@@ -17,7 +18,7 @@ IB_DESIGNABLE
 @property (nonatomic, weak) IBOutlet id<PlayerBarDelegate> playerBarDelegate;
 @property (nonatomic, assign) IBInspectable CGFloat spacing;
 @property (nonatomic, assign) BOOL enabled;
-
+- (void)setPlayButtonState:(BOOL)isPlaying;
 @end
 
 @protocol PlayerBarDelegate <NSObject>

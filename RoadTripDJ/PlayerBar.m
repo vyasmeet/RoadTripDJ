@@ -9,6 +9,13 @@
 
 #import "PlayerBar.h"
 
+@interface PlayerBar() {
+    UIBarButtonItem *_playButton;
+}
+
+@end
+
+
 @implementation PlayerBar
 
 - (instancetype) initWithCoder:(NSCoder *)aDecoder {
@@ -41,6 +48,22 @@
     }
 }
 
+- (void)setPlayButtonState:(BOOL)isPlaying {
+    UIImage *image = nil;
+    UIImage *highlightedImage = nil;
+    if (isPlaying) {
+        image = [self templateImageNamed:@"1242-pause-toolbar"];
+        highlightedImage = [self templateImageNamed:@"1242-pause-toolbar-selected"];
+    } else {
+        image = [self templateImageNamed:@"1241-play-toolbar"];
+        highlightedImage = [self templateImageNamed:@"1241-play-toolbar-selected"];
+    }
+    UIBarButtonItem *playButtonItem = [self playButton];
+    UIButton *button = (UIButton *)playButtonItem.customView;
+    [button setImage:image forState:UIControlStateNormal];
+    [button setImage:highlightedImage forState:UIControlStateHighlighted];
+}
+
 - (void)prepareForInterfaceBuilder {
     UIView *prev = [[self skipBackButton] customView];
     UIView *play = [[self playButton] customView];
@@ -65,42 +88,57 @@
 }
 
 - (void)setupToolbar {
-    UIBarButtonItem *flexibleSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:nil];
-    UIBarButtonItem *fixedSpace = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFixedSpace target:nil action:nil];
-    
-    [fixedSpace setWidth:self.spacing];
     
     UIBarButtonItem *prevButton = [self skipBackButton];
     UIBarButtonItem *playButton = [self playButton];
     UIBarButtonItem *nextButton = [self skipForwardButton];
     
-    
     self.items = @[
-                   flexibleSpace,
                    prevButton,
-                   fixedSpace,
                    playButton,
-                   fixedSpace,
                    nextButton,
-                   flexibleSpace
                    ];
+    
+    UIView *b1 = prevButton.customView;
+    UIView *b2 = playButton.customView;
+    UIView *b3 = nextButton.customView;
+    
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|-[b1]-[b2(==b1)]-[b3(==b1)]-|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:NSDictionaryOfVariableBindings(b1,b2,b3)];
+    for (UIView *b in @[b1,b2,b3]) {
+        NSArray *verticalConstraints = [NSLayoutConstraint constraintsWithVisualFormat:@"V:|-(0)-[b]-(0)-|"
+                                                                               options:0
+                                                                               metrics:nil
+                                                                                 views:NSDictionaryOfVariableBindings(b)];
+        constraints = [constraints arrayByAddingObject:verticalConstraints];
+    }
+    
+    [NSLayoutConstraint activateConstraints:constraints];
+    
     for (UIBarButtonItem *item in self.items) {
         item.enabled = self.enabled;
     }
 }
 
-- (UIBarButtonItem *) buttonWithImage:(NSString *)imageNamed selectedImage:(NSString *)selectedImageNamed target:(id)target action:(SEL)action {
-    
+- (UIImage *)templateImageNamed:(NSString *)name {
     NSBundle *bundle = [NSBundle bundleForClass:self.class];
-    UIImage *image = [UIImage imageNamed:imageNamed inBundle:bundle compatibleWithTraitCollection:self.traitCollection];
-    UIImage *selectedImage = [UIImage imageNamed:selectedImageNamed inBundle:bundle compatibleWithTraitCollection:self.traitCollection];
-    
+    UIImage *image = [UIImage imageNamed:name inBundle:bundle compatibleWithTraitCollection:self.traitCollection];
+    return [image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate];
+}
+
+- (UIBarButtonItem *) buttonWithImage:(NSString *)imageNamed selectedImage:(NSString *)selectedImageNamed target:(id)target action:(SEL)action {
+    UIImage *image = [self templateImageNamed:imageNamed];
+    UIImage *selectedImage = [self templateImageNamed:selectedImageNamed];
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
     [button addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
-    [button setImage:[image imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateNormal];
-    [button setImage:[selectedImage imageWithRenderingMode:UIImageRenderingModeAlwaysTemplate] forState:UIControlStateSelected];
-    button.frame = CGRectMake(0, 0, image.size.width * 4, image.size.height * 2);
-    button.imageEdgeInsets = UIEdgeInsetsMake(-20, -40, -20, -40);
+    [button setImage:image forState:UIControlStateNormal];
+    [button setImage:selectedImage forState:UIControlStateHighlighted];
+    [button setBackgroundColor:[UIColor clearColor] forState:UIControlStateNormal];
+    [button setBackgroundColor:[[UIColor blackColor] colorWithAlphaComponent:0.3] forState:UIControlStateHighlighted];
+    
+    button.translatesAutoresizingMaskIntoConstraints = NO;
     return [[UIBarButtonItem alloc] initWithCustomView:button];
 }
 
@@ -112,10 +150,13 @@
 }
 
 - (UIBarButtonItem *)playButton {
-    return [self buttonWithImage:@"1241-play-toolbar"
-                   selectedImage:@"1241-play-toolbar-selected"
-                          target:self
-                          action:@selector(playPause:)];
+    if (_playButton == nil) {
+        _playButton = [self buttonWithImage:@"1241-play-toolbar"
+                       selectedImage:@"1241-play-toolbar-selected"
+                              target:self
+                              action:@selector(playPause:)];
+    }
+    return _playButton;
 }
 
 - (UIBarButtonItem *)skipForwardButton {
@@ -134,7 +175,13 @@
 }
 
 - (void)playPause:(id)sender {
+#if TARGET_IPHONE_SIMULATOR
+    static BOOL isPlaying = NO;
+    [self setPlayButtonState:isPlaying];
+    isPlaying = !isPlaying;
+#else
     [self.playerBarDelegate playerBarPlayPause:self];
+#endif
 }
 
 @end

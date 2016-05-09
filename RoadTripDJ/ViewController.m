@@ -36,6 +36,15 @@
     UINib *headerNib = [UINib nibWithNibName:@"PlaylistHeaderView" bundle:nil];
     NSArray *objects = [headerNib instantiateWithOwner:self options:nil];
     
+    // Setting up the cell width as per the screen's width
+    
+    UICollectionViewFlowLayout *flowLayout = (UICollectionViewFlowLayout *)self.collectionView.collectionViewLayout;
+    CGSize itemSize = flowLayout.itemSize;
+    itemSize.width = self.view.frame.size.width;
+    flowLayout.itemSize = itemSize;
+    
+    // Setting headerview for collectionview
+    
     PlaylistHeaderView *header = [objects firstObject];
     [self.headerContainerView addSubview:header];
     
@@ -67,9 +76,11 @@
     if (self.player.playbackState == MPMusicPlaybackStatePlaying) {
         NSLog(@"Pausing");
         [self.player pause];
+        [self.playerBar setPlayButtonState:NO];
     } else {
         NSLog(@"Playing");
         [self.player play];
+        [self.playerBar setPlayButtonState:YES];
     }
 }
 

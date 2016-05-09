@@ -20,6 +20,7 @@
 		E42F09101CC54EFB009AED4A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E42F090F1CC54EFB009AED4A /* Assets.xcassets */; };
 		E42F09131CC54EFB009AED4A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E42F09111CC54EFB009AED4A /* LaunchScreen.storyboard */; };
 		E461015F1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E461015E1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m */; };
+		E468C71B1CE0F67A0052000B /* UIButton+BackgroundColorForState.m in Sources */ = {isa = PBXBuildFile; fileRef = E468C71A1CE0F67A0052000B /* UIButton+BackgroundColorForState.m */; };
 		E4A025641CD25E30002D95CA /* PlayerBar.m in Sources */ = {isa = PBXBuildFile; fileRef = E4A025631CD25E30002D95CA /* PlayerBar.m */; };
 /* End PBXBuildFile section */
 
@@ -47,6 +48,8 @@
 		E42F09141CC54EFB009AED4A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E461015D1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "MPMediaItem+PlaylistItem.h"; sourceTree = "<group>"; };
 		E461015E1CDDFDC00031BC70 /* MPMediaItem+PlaylistItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "MPMediaItem+PlaylistItem.m"; sourceTree = "<group>"; };
+		E468C7191CE0F67A0052000B /* UIButton+BackgroundColorForState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+BackgroundColorForState.h"; sourceTree = "<group>"; };
+		E468C71A1CE0F67A0052000B /* UIButton+BackgroundColorForState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+BackgroundColorForState.m"; sourceTree = "<group>"; };
 		E4A025621CD25E30002D95CA /* PlayerBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlayerBar.h; sourceTree = "<group>"; };
 		E4A025631CD25E30002D95CA /* PlayerBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlayerBar.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -82,6 +85,8 @@
 				D1E70AF11CDC5B5D00CCFD41 /* PlaylistHeaderView.h */,
 				D1E70AF21CDC5B5D00CCFD41 /* PlaylistHeaderView.m */,
 				D1E70AF41CDC5B9800CCFD41 /* PlaylistHeaderView.xib */,
+				E468C7191CE0F67A0052000B /* UIButton+BackgroundColorForState.h */,
+				E468C71A1CE0F67A0052000B /* UIButton+BackgroundColorForState.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -207,6 +212,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E4A025641CD25E30002D95CA /* PlayerBar.m in Sources */,
+				E468C71B1CE0F67A0052000B /* UIButton+BackgroundColorForState.m in Sources */,
 				D108A6DE1CDB478C00B6B698 /* PlaylistDataSource.m in Sources */,
 				D108A6E31CDB563100B6B698 /* SamplePlaylistItem.m in Sources */,
 				E42F090B1CC54EFB009AED4A /* ViewController.m in Sources */,
