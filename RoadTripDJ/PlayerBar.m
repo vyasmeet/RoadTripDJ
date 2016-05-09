@@ -112,7 +112,7 @@
                                                                                options:0
                                                                                metrics:nil
                                                                                  views:NSDictionaryOfVariableBindings(b)];
-        constraints = [constraints arrayByAddingObject:verticalConstraints];
+        constraints = [constraints arrayByAddingObjectsFromArray:verticalConstraints];
     }
     
     [NSLayoutConstraint activateConstraints:constraints];

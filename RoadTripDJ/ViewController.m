@@ -17,7 +17,7 @@
 
 @property (nonatomic, strong) MPMediaItemCollection *playlist;
 @property (nonatomic, strong) MPMusicPlayerController *player;
-@property (nonatomic, strong) UIBarButtonItem *playButton;
+//@property (nonatomic, strong) UIBarButtonItem *playButton;
 @property (nonatomic, weak) IBOutlet PlayerBar *playerBar;
 @property (nonatomic, weak) IBOutlet UICollectionView *collectionView;
 @property (nonatomic, weak) IBOutlet UIView *headerContainerView;
@@ -98,7 +98,6 @@
 #pragma mark - Actions
 
 - (IBAction)playPaused:(id)sender {
-    self.playButton = sender;
     [self togglePlayPause];
 }
 
