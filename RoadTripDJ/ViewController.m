@@ -13,7 +13,7 @@
 
 @import MediaPlayer;
 
-@interface ViewController () <MPMediaPickerControllerDelegate, PlayerBarDelegate>
+@interface ViewController () <MPMediaPickerControllerDelegate, PlayerBarDelegate, UICollectionViewDelegate>
 
 @property (nonatomic, strong) MPMediaItemCollection *playlist;
 @property (nonatomic, strong) MPMusicPlayerController *player;
@@ -32,7 +32,7 @@
     
     self.player = [[MPMusicPlayerController alloc] init];
     self.collectionView.contentInset = UIEdgeInsetsMake(-64, 0, 44, 0);
-    
+    self.collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(-64, 0, 44, 0);
     UINib *headerNib = [UINib nibWithNibName:@"PlaylistHeaderView" bundle:nil];
     NSArray *objects = [headerNib instantiateWithOwner:self options:nil];
     
@@ -171,6 +171,26 @@
 
 - (void)playerBarPlayPause:(PlayerBar *)playerBar {
     [self togglePlayPause];
+}
+
+#pragma mark - UICollectionView delegate methods
+
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    // check if this is the current playing track
+    if (indexPath.row == self.playlistDataSource.currentTrackIndex) {
+        return;
+    }
+    
+#if !TARGET_IPHONE_SIMULATOR
+    self.playlistDataSource.currentTrackIndex = indexPath.row;
+    
+    MPMediaItem *item = self.playlist.items[indexPath.row];
+    [self.player setNowPlayingItem:item];
+    if (self.player.playbackState == MPMusicPlaybackStateStopped ||
+        self.player.playbackState == MPMusicPlaybackStatePaused) {
+        [self.player play];
+    }
+#endif
 }
 
 @end

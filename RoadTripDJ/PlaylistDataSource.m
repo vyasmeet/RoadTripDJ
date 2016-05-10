@@ -22,13 +22,17 @@
 }
 
 - (void)setCurrentTrackIndex:(NSInteger)currentTrackIndex {
-    _currentTrackIndex = currentTrackIndex;
     
-    if (_currentTrackIndex >= (NSInteger)self.items.count) {
-        _currentTrackIndex = 0;
+    if (currentTrackIndex >= (NSInteger)self.items.count) {
+        currentTrackIndex = 0;
     } else if (_currentTrackIndex < 0) {
-        _currentTrackIndex = self.items.count - 1;
+        currentTrackIndex = self.items.count - 1;
     }
+    
+    NSIndexPath *oldIndexPath = [NSIndexPath indexPathForItem:_currentTrackIndex inSection:0];
+    NSIndexPath *newIndexPath = [NSIndexPath indexPathForItem:currentTrackIndex inSection:0];
+    
+    _currentTrackIndex = currentTrackIndex;
     
     id<PlaylistItem> item = self.items[_currentTrackIndex];
     [self.playlistHeaderView setPlaylistItem:item animated:YES];
@@ -40,6 +44,8 @@
         NSIndexPath *firstTrackIndexPath = [NSIndexPath indexPathForItem:0 inSection:0];
         [self.collectionView scrollToItemAtIndexPath:firstTrackIndexPath atScrollPosition:UICollectionViewScrollPositionTop animated:YES];
     }
+    
+    [self.collectionView reloadItemsAtIndexPaths:@[oldIndexPath,newIndexPath]];
 }
 
 - (void)setItems:(NSArray *)items {
@@ -66,6 +72,12 @@
     cell.imageView.image = playlistItem.image;
     cell.songLabel.text = playlistItem.title;
     cell.artistLabel.text = playlistItem.artist;
+    
+    if (indexPath.row == self.currentTrackIndex) {
+        cell.backgroundColor = [UIColor darkGrayColor];
+    } else {
+        cell.backgroundColor = [UIColor colorWithRed:0.33/255.0 green:0.33/255.0 blue:0.33/255.0 alpha:1.0];
+    }
     
     return cell;
 }

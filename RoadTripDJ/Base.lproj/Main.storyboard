@@ -18,8 +18,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-Dw-gMH">
-                                <rect key="frame" x="0.0" y="503" width="375" height="164"/>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" indicatorStyle="white" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-Dw-gMH">
+                                <rect key="frame" x="0.0" y="439" width="375" height="228"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="7lZ-cy-ZpS">
                                     <size key="itemSize" width="360" height="61"/>
@@ -57,7 +57,7 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
-                                        <color key="backgroundColor" red="0.10408653846153848" green="0.10408653846153848" blue="0.10408653846153848" alpha="1" colorSpace="calibratedRGB"/>
+                                        <color key="backgroundColor" red="0.12941176470588234" green="0.12941176470588234" blue="0.12941176470588234" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="32e-x3-aEF" firstAttribute="leading" secondItem="tL0-aF-m8q" secondAttribute="leadingMargin" id="2oV-oo-yV0"/>
                                             <constraint firstAttribute="topMargin" secondItem="1et-KJ-F8P" secondAttribute="top" id="BQP-lU-ss0"/>
@@ -84,6 +84,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="OSr-qz-8RD" id="gMW-6z-ptJ"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="VVv-pw-IEI"/>
                                 </connections>
                             </collectionView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" barStyle="black" translatesAutoresizingMaskIntoConstraints="NO" id="Lpo-T6-4yv" customClass="PlayerBar">
@@ -98,7 +99,7 @@
                                 </connections>
                             </toolbar>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Kcp-y2-OnP">
-                                <rect key="frame" x="0.0" y="64" width="375" height="439"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="439" placeholder="YES" id="8QU-bc-4tx"/>
@@ -111,7 +112,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="Lpo-T6-4yv" secondAttribute="bottom" id="5Rj-ob-7RL"/>
                             <constraint firstAttribute="trailing" secondItem="9r5-Dw-gMH" secondAttribute="trailing" id="6tC-PL-BsN"/>
                             <constraint firstItem="9r5-Dw-gMH" firstAttribute="top" secondItem="Kcp-y2-OnP" secondAttribute="bottom" id="HSl-LV-WCu"/>
-                            <constraint firstItem="Kcp-y2-OnP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" id="Jez-tL-Vnp"/>
+                            <constraint firstItem="Kcp-y2-OnP" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="-64" id="Jez-tL-Vnp"/>
                             <constraint firstItem="9r5-Dw-gMH" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" constant="439" id="MRy-7u-fXi"/>
                             <constraint firstItem="Lpo-T6-4yv" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="N9b-wf-tBD"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="9r5-Dw-gMH" secondAttribute="bottom" id="T5J-o2-kOH"/>
