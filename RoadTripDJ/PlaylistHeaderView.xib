@@ -3,40 +3,45 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="PlaylistHeaderView">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="4uV-ye-eoB">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
                 </imageView>
                 <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A1c-OU-8bg">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
                     <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="UpQ-jZ-EFf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="439"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="419"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="cPO-v0-wlz">
-                                <rect key="frame" x="37" y="70" width="300" height="300"/>
+                                <rect key="frame" x="40" y="70" width="295" height="295"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="cPO-v0-wlz" secondAttribute="height" multiplier="1:1" id="Gz7-TR-Erg"/>
+                                </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Select some music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veL-BC-YUN">
-                                <rect key="frame" x="37" y="378" width="300" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Select some music" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veL-BC-YUN">
+                                <rect key="frame" x="40" y="373" width="295" height="23"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-Q9-ILZ">
-                                <rect key="frame" x="37" y="399" width="300" height="0.0"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sdfsdf" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GaZ-Q9-ILZ">
+                                <rect key="frame" x="40" y="399" width="295" height="16"/>
                                 <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <constraints>
+                            <constraint firstAttribute="trailing" secondItem="cPO-v0-wlz" secondAttribute="trailing" constant="40" id="9tO-xc-tJA"/>
                             <constraint firstItem="cPO-v0-wlz" firstAttribute="leading" secondItem="veL-BC-YUN" secondAttribute="leading" id="BIz-VV-HMi"/>
                             <constraint firstItem="GaZ-Q9-ILZ" firstAttribute="top" secondItem="veL-BC-YUN" secondAttribute="bottom" constant="3" id="BOY-bB-Xv1"/>
                             <constraint firstItem="cPO-v0-wlz" firstAttribute="centerY" secondItem="UpQ-jZ-EFf" secondAttribute="centerY" id="BxE-wH-RF8"/>
@@ -44,10 +49,19 @@
                             <constraint firstItem="cPO-v0-wlz" firstAttribute="trailing" secondItem="veL-BC-YUN" secondAttribute="trailing" id="OPU-5g-DuO"/>
                             <constraint firstItem="GaZ-Q9-ILZ" firstAttribute="width" secondItem="veL-BC-YUN" secondAttribute="width" id="Rz3-EP-z7H"/>
                             <constraint firstItem="GaZ-Q9-ILZ" firstAttribute="centerX" secondItem="veL-BC-YUN" secondAttribute="centerX" id="UA1-fi-fsB"/>
-                            <constraint firstItem="cPO-v0-wlz" firstAttribute="leading" secondItem="UpQ-jZ-EFf" secondAttribute="leading" constant="37" id="okh-mT-eEr"/>
+                            <constraint firstAttribute="bottom" secondItem="GaZ-Q9-ILZ" secondAttribute="bottom" constant="29" id="hrJ-Hj-5Ks"/>
+                            <constraint firstItem="cPO-v0-wlz" firstAttribute="leading" secondItem="UpQ-jZ-EFf" secondAttribute="leading" constant="40" id="okh-mT-eEr"/>
                             <constraint firstItem="cPO-v0-wlz" firstAttribute="centerX" secondItem="UpQ-jZ-EFf" secondAttribute="centerX" id="q7q-RL-O3K"/>
+                            <constraint firstAttribute="bottom" secondItem="GaZ-Q9-ILZ" secondAttribute="bottom" constant="4" id="yuI-ck-pCN"/>
                             <constraint firstItem="veL-BC-YUN" firstAttribute="top" secondItem="cPO-v0-wlz" secondAttribute="bottom" constant="8" symbolic="YES" id="zU9-I6-vAM"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="BxE-wH-RF8"/>
+                                <exclude reference="q7q-RL-O3K"/>
+                                <exclude reference="hrJ-Hj-5Ks"/>
+                            </mask>
+                        </variation>
                     </view>
                     <blurEffect style="dark"/>
                 </visualEffectView>

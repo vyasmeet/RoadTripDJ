@@ -44,10 +44,20 @@
     flowLayout.itemSize = itemSize;
     
     // Setting headerview for collectionview
-    
     PlaylistHeaderView *header = [objects firstObject];
+    header.translatesAutoresizingMaskIntoConstraints = NO;
     [self.headerContainerView addSubview:header];
     
+    NSArray *constraints = [NSLayoutConstraint constraintsWithVisualFormat:@"|[header]|"
+                                                                   options:0
+                                                                   metrics:nil
+                                                                     views:NSDictionaryOfVariableBindings(header)];
+    constraints = [constraints arrayByAddingObjectsFromArray:[NSLayoutConstraint constraintsWithVisualFormat:@"V:|[header]|"
+                                                                                                     options:0
+                                                                                                     metrics:nil
+                                                                                                       views:NSDictionaryOfVariableBindings(header)]];
+    [NSLayoutConstraint activateConstraints:constraints];
+
     
 #if TARGET_IPHONE_SIMULATOR
     NSArray *items = @[

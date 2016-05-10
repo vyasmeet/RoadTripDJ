@@ -21,7 +21,7 @@
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="9r5-Dw-gMH">
                                 <rect key="frame" x="0.0" y="503" width="375" height="164"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="4" minimumInteritemSpacing="0.0" id="7lZ-cy-ZpS">
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="1" minimumInteritemSpacing="0.0" id="7lZ-cy-ZpS">
                                     <size key="itemSize" width="360" height="61"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
@@ -29,7 +29,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="cell" id="tL0-aF-m8q" customClass="PlaylistItemCollectionViewCell">
-                                        <rect key="frame" x="7.5" y="64" width="360" height="61"/>
+                                        <rect key="frame" x="8" y="64" width="360" height="61"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                                             <rect key="frame" x="0.0" y="0.0" width="360" height="61"/>
@@ -101,7 +101,7 @@
                                 <rect key="frame" x="0.0" y="64" width="375" height="439"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="439" id="8QU-bc-4tx"/>
+                                    <constraint firstAttribute="height" constant="439" placeholder="YES" id="8QU-bc-4tx"/>
                                 </constraints>
                             </view>
                         </subviews>
